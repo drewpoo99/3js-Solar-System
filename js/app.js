@@ -18,7 +18,7 @@
 
     //declare planet radii. Read more about this below the animation
     const sunRad = 10;
-    const earthRad = sunRad / 50.45;
+    const earthRad = sunRad / 54.5;
     const merRad = earthRad * 0.38;
     const venusRad = earthRad * 0.95;
     const marsRad = earthRad * 0.53;
@@ -29,14 +29,15 @@
 
     //planet distances from the sun. Read more about this below the animation. Add 5.1 so it draws from the edge of the sun instead of the center
     const sunP = 0
-    const mercD = sunP + 5.7 + 5.1;
-    const venusD = sunP + 10.8 + 5.1;
-    const earthD = sunP + 14.9 + 5.1;
-    const marsD = sunP + 22.8 + 5.1;
-    const jupiterD = sunP + 78.0 + 5.1;
-    const saturnD = sunP + 143.7 + 5.1;
-    const uranusD = sunP + 287.1 + 5.1;
-    const neptuneD = sunP + 453.0 + 5.1;
+    const D = 5.1;
+    const mercD = sunP + 5.7 + D;
+    const venusD = sunP + 10.8 + D;
+    const earthD = sunP + 14.9 + D;
+    const marsD = sunP + 22.8 + D;
+    const jupiterD = sunP + 78.0 + D;
+    const saturnD = sunP + 143.7 + D;
+    const uranusD = sunP + 287.1 + D;
+    const neptuneD = sunP + 453.0 + D;
 
     //planet orbit speeds. Read more about this below the animation
     const mercOrbitSpeed = 4.787;
