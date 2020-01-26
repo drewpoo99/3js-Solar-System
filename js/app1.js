@@ -1,3 +1,8 @@
+/*
+* This is not the active app for the animation. It is slightly 
+depreciated because it does not draw the planets at the proper distance.
+*/
+
 var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera( 20, window.innerWidth/window.innerHeight, 0.1, 1000 );
 camera.position.set(350, 117.5, 0);

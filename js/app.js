@@ -1,4 +1,7 @@
-    
+    /*
+    * This is the active app for the animation.
+    * 
+    */
     //Set up the scene and camera
     var scene = new THREE.Scene();
     var camera = new THREE.PerspectiveCamera( 90, window.innerWidth/window.innerHeight, 0.1, 1000 );
@@ -147,6 +150,9 @@
     planets.push(neptune);
 
     //draw the lines following the planet orbit then add everything to the scene
+    /*
+    *   Borrowed from the codepen (view the bottom of the page for the link)
+    */
     for(let p in planets){
         var orbit = new THREE.Line(
         new THREE.CircleGeometry(planets[p].orbitRadius, 90),
@@ -168,6 +174,9 @@
     var animate = function () {
         requestAnimationFrame( animate );
 
+        /*
+        *   Borrowed from the codepen (view the bottom of the page for the link)
+        */
         for(let p in planets){
             let planet = planets[p];
             planet.orbit += planet.orbitSpeed;
