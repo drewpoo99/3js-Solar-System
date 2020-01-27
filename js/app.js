@@ -19,6 +19,39 @@
     controls.panSpeed = 0.8;
     scene.rotation.y = 9.5;
 
+    var gui = new dat.GUI();
+
+    var planetsGUIOptions = {
+        sun : false,
+        mercury : false,
+        venus : false,
+        earth : false,
+        mars : false,
+        jupiter : false,
+        saturn : false,
+        uranus : false,
+        neptune : false
+    };
+    var planetsGUI = gui.addFolder("Learn About The Planets");
+    planetsGUI.add(planetsGUIOptions, 'sun');
+    planetsGUI.add(planetsGUIOptions, 'mercury');
+    planetsGUI.add(planetsGUIOptions, 'venus');
+    planetsGUI.add(planetsGUIOptions, 'earth');
+    planetsGUI.add(planetsGUIOptions, 'mars');
+    planetsGUI.add(planetsGUIOptions, 'jupiter');
+    planetsGUI.add(planetsGUIOptions, 'saturn');
+    planetsGUI.add(planetsGUIOptions, 'uranus');
+    planetsGUI.add(planetsGUIOptions, 'neptune');
+    
+    var rocketsGUI = gui.addFolder("Launch a Rocket");
+    rocketsGUI.add(planetsGUIOptions, 'mercury');
+    rocketsGUI.add(planetsGUIOptions, 'venus');
+    rocketsGUI.add(planetsGUIOptions, 'mars');
+    rocketsGUI.add(planetsGUIOptions, 'jupiter');
+    rocketsGUI.add(planetsGUIOptions, 'saturn');
+    rocketsGUI.add(planetsGUIOptions, 'uranus');
+    rocketsGUI.add(planetsGUIOptions, 'neptune');
+    
     //declare planet radii. Read more about this below the animation
     const sunRad = 10;
     const earthRad = sunRad / 54.5;
@@ -159,7 +192,7 @@
         new THREE.MeshBasicMaterial({
             color: 0xffffff,
             transparent: true,
-            opacity: .05,
+            opacity: 0.1,
             side: THREE.BackSide
             })
         );
@@ -173,7 +206,6 @@
     //animate it all!
     var animate = function () {
         requestAnimationFrame( animate );
-
         /*
         *   Borrowed from the codepen (view the bottom of the page for the link)
         */
