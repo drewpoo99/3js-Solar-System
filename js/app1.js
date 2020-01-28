@@ -1,6 +1,6 @@
 /*
 * This is not the active app for the animation. It is slightly 
-depreciated because it does not draw the planets at the proper distance.
+depreciated because it does not draw the planets at the proper distance, just evenly spaced out.
 */
 
 var scene = new THREE.Scene();
