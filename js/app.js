@@ -30,7 +30,10 @@
         jupiter : false,
         saturn : false,
         uranus : false,
-        neptune : false
+        neptune : false,
+        launch : function(){
+            console.log("launch clicked");
+        }
     };
     var planetsGUI = gui.addFolder("Learn About The Planets");
     planetsGUI.add(planetsGUIOptions, 'sun');
@@ -51,6 +54,7 @@
     rocketsGUI.add(planetsGUIOptions, 'saturn');
     rocketsGUI.add(planetsGUIOptions, 'uranus');
     rocketsGUI.add(planetsGUIOptions, 'neptune');
+    rocketsGUI.add(planetsGUIOptions, 'launch');
     
     //declare planet radii. Read more about this below the animation
     const sunRad = 10;
