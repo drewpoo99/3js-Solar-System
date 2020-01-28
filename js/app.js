@@ -17,7 +17,7 @@
     controls.rotateSpeed = 1.0;
     controls.zoomSpeed = 1.2;
     controls.panSpeed = 0.8;
-    scene.rotation.y = 9.5;
+    // scene.rotation.y = 9.5;
 
     var gui = new dat.GUI();
 
@@ -92,11 +92,16 @@
     //planets array
     let planets = [];
 
+    var geometry = new THREE.ConeGeometry( 9, 22, 32 );
+    var material = new THREE.MeshBasicMaterial( {color: 0xffff00} );
+    var cone = new THREE.Mesh( geometry, material );
+    scene.add( cone );
+
     //create the sun
     var sunGeometry = new THREE.SphereGeometry( 10, 32, 32 );
     var sunMaterial = new THREE.MeshBasicMaterial( { color: 0xFFB200 } );
     var sun = new THREE.Mesh( sunGeometry, sunMaterial );
-
+    
     //create mercury
     var mercuryGeo = new THREE.SphereGeometry(merRad, 32, 32);
     var mercuryMat = new THREE.MeshBasicMaterial({color: 0xffffff});
@@ -206,7 +211,7 @@
         scene.add(planets[p]);
         scene.add(sun);
     }
-
+   
     //animate it all!
     var animate = function () {
         requestAnimationFrame( animate );
@@ -217,6 +222,65 @@
             let planet = planets[p];
             planet.orbit += planet.orbitSpeed;
             planet.position.set(Math.cos(planet.orbit) * planet.orbitRadius, 0, -Math.sin(planet.orbit) * planet.orbitRadius);
+        }
+
+        cone.position.y += 2;
+       
+        if(planetsGUIOptions.mercury){
+            camera.position.y = 5;
+            camera.position.x = mercury.position.x;
+            camera.position.z = mercury.position.z;
+            // camera.position.y = earth.position.y + 50;
+            camera.lookAt(mercury.position);     
+        }
+        if(planetsGUIOptions.venus){
+            camera.position.y = 10;
+            camera.position.x = venus.position.x;
+            camera.position.z = venus.position.z;
+            // camera.position.y = earth.position.y + 50;
+            camera.lookAt(venus.position);
+        }
+        if(planetsGUIOptions.earth){
+            camera.position.y = 10;
+            camera.position.x = earth.position.x;
+            camera.position.z = earth.position.z;
+            // camera.position.y = earth.position.y + 50;
+            camera.lookAt(earth.position);
+        }
+        if(planetsGUIOptions.mars){
+            camera.position.y = 10;
+            camera.position.x = Mars.position.x;
+            camera.position.z = Mars.position.z;
+            // camera.position.y = earth.position.y + 50;
+            camera.lookAt(Mars.position);
+        }
+        if(planetsGUIOptions.jupiter){
+            camera.position.y = 10;
+            camera.position.x = jupiter.position.x;
+            camera.position.z = jupiter.position.z;
+            // camera.position.y = earth.position.y + 50;
+            camera.lookAt(jupiter.position);
+        }
+        if(planetsGUIOptions.saturn){
+            camera.position.y = 10;
+            camera.position.x = saturn.position.x;
+            camera.position.z = saturn.position.z;
+            // camera.position.y = earth.position.y + 50;
+            camera.lookAt(saturn.position);
+        }
+        if(planetsGUIOptions.uranus){
+            camera.position.y = 10;
+            camera.position.x = uranus.position.x;
+            camera.position.z = uranus.position.z;
+            // camera.position.y = earth.position.y + 50;
+            camera.lookAt(uranus.position);
+        }
+        if(planetsGUIOptions.neptune){
+            camera.position.y = 10;
+            camera.position.x = neptune.position.x;
+            camera.position.z = neptune.position.z;
+            // camera.position.y = earth.position.y + 50;
+            camera.lookAt(neptune.position);
         }
         renderer.render( scene, camera );
     };

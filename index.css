@@ -7,6 +7,11 @@ body{
 
 canvas { width: 100%; height: 100% }
 
+#earthInfo{
+    color: white;
+    visibility: hidden;
+}
+
 .about{
     color: white;
     margin-top: 10px;
